@@ -1,0 +1,16 @@
+/* Tax switch on right */
+.right-filter {
+  flex-shrink: 0;
+}
+.tax-toggle {
+  border: 1px solid black;
+  border-radius: 1rem;
+  height: 3.25rem;
+  padding: 1rem;
+  margin-left: 2rem;
+  display: flex;
+  align-items: center;
+}
+.tax-info {
+  display: none;
+}

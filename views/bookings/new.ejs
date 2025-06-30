@@ -1,0 +1,126 @@
+<% layout("/layouts/boilerplate")%>
+<div class="row mt-3">
+  <div class="col-8 offset-2">
+    <h2>Booking for <%= listing.title %></h2>
+    <br />
+    <form method="POST" action="/bookings/<%= listing._id %>" novalidate>
+      <!-- User Information -->
+      <div class="mb-3">
+        <label for="fullName" class="form-label"><b>Name</b></label>
+        <input
+          type="text"
+          class="form-control"
+          id="fullName"
+          name="fullName"
+          required
+          placeholder="Enter your full name"
+        />
+        <div class="invalid-feedback">Please provide your full name.</div>
+      </div>
+
+      <!-- Room Selection -->
+      <div class="mb-3">
+        <label for="room" class="form-label"><b>Select Room Type</b></label>
+        <select id="room" name="room" class="form-select" required>
+          <option value="">Choose a room type</option>
+          <option value="single">Single Room</option>
+          <option value="double">Double Room</option>
+          <option value="suite">Suite</option>
+        </select>
+        <div class="invalid-feedback">Please select a room type.</div>
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label for="checkIn" class="form-label"><b>Check-in:</b></label>
+          <input
+            type="text"
+            id="checkIn"
+            name="checkIn"
+            placeholder="Select check-in dates"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please select a check-in date.</div>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label for="checkOut" class="form-label"><b>Check-out:</b></label>
+          <input
+            type="text"
+            id="checkOut"
+            name="checkOut"
+            placeholder="Select check-out dates"
+            class="form-control"
+            required
+          />
+          <div class="invalid-feedback">Please select a check-out date.</div>
+        </div>
+      </div>
+
+      <!-- Number of guests -->
+      <div class="mb-3">
+        <label for="guests" class="form-label"><b>Number of Guests</b></label>
+        <input
+          type="number"
+          id="guests"
+          name="guests"
+          class="form-control"
+          min="1"
+          required
+        />
+        <div class="invalid-feedback">Please enter the number of guests.</div>
+      </div>
+
+      <!-- Special Requests -->
+      <div class="mb-3">
+        <label for="requests" class="form-label"
+          ><b>Special Requests(Optional)</b></label
+        >
+        <textarea id="requests" class="form-control" name="requests"></textarea>
+      </div>
+
+      <!-- Payment Method -->
+      <div class="mb-3">
+        <label for="paymentMethod" class="form-label"
+          ><b>Select a Payment Method</b></label
+        >
+        <select id="paymentMethod" name="paymentMethod" class="form-select">
+          <option value="">Choose a payment method</option>
+          <option value="credit_card">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="cash">Cash on Arrival</option>
+        </select>
+        <div class="invalid-feedback">Please select a payment method.</div>
+      </div>
+
+      <button type="submit" class="btn btn-dark btn-add mt-3">Book Now</button>
+      <br /><br />
+    </form>
+  </div>
+</div>
+
+<!-- Flatpickr CSS -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css"
+/>
+<!-- Flatpickr JS -->
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+<script>
+  const checkInInput = document.getElementById("checkIn");
+  const checkOutInput = document.getElementById("checkOut");
+
+  flatpickr(checkInInput, {
+    dateFormat: "Y-m-d",
+    minDate: "today",
+    onChange: function (selectedDates, dateStr, instance) {
+      checkOutPicker.set("minDate", dateStr); // sync check-out minDate
+    },
+  });
+
+  const checkOutPicker = flatpickr(checkOutInput, {
+    dateFormat: "Y-m-d",
+    minDate: "today",
+  });
+</script>
