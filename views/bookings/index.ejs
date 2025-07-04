@@ -18,8 +18,7 @@
           <p>
             <b>Total Price:</b>
             <%= booking.totalPrice.toLocaleString("en-US" , {style : "currency"
-            , currency : "USD" , minimumFractionDigits : 0}) %> for <%= days %>
-            night
+            , currency : "USD" , minimumFractionDigits : 0}) %>
           </p>
           <p><b>Visitor:</b> <%= booking.fullName %></p>
           <p><b>Check-in:</b> <%= booking.checkIn %></p>
