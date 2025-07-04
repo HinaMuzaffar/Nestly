@@ -16,9 +16,9 @@
           <h5 class="card-title mb-3"><%= booking.listing.title %></h5>
           <p><b>Location:</b> <%= booking.listing.location %></p>
           <p>
-            <b>Price:</b>
-            <%= booking.listing.price.toLocaleString("en-US" , {style :
-            "currency" , currency : "USD" , minimumFractionDigits : 0}) %> for 1
+            <b>Total Price:</b>
+            <%= booking.totalPrice.toLocaleString("en-US" , {style : "currency"
+            , currency : "USD" , minimumFractionDigits : 0}) %> for <%= days %>
             night
           </p>
           <p><b>Visitor:</b> <%= booking.fullName %></p>

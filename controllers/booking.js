@@ -56,7 +56,7 @@ module.exports.createBooking = async (req, res) => {
   });
   await booking.save();
   req.flash("success", "Booking Created Successfully!");
-  res.redirect("/bookings");
+  res.redirect("/bookings", { days, totalPrice });
 };
 
 //Show Bookings
