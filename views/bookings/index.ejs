@@ -17,7 +17,8 @@
           <p><b>Location:</b> <%= booking.listing.location %></p>
           <p>
             <b>Price:</b>
-            <%= booking.listing.price.toLocaleString("en-IN") %> PKR / night
+            <%= listing.price.toLocaleString("en-US" , {style : "currency" ,
+            currency : "USD" , minimumFractionDigits : 0}) %> for 1 night
           </p>
           <p><b>Visitor:</b> <%= booking.fullName %></p>
           <p><b>Check-in:</b> <%= booking.checkIn %></p>
