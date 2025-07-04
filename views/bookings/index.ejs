@@ -17,8 +17,9 @@
           <p><b>Location:</b> <%= booking.listing.location %></p>
           <p>
             <b>Price:</b>
-            <%= listing.price.toLocaleString("en-US" , {style : "currency" ,
-            currency : "USD" , minimumFractionDigits : 0}) %> for 1 night
+            <%= booking.listing.price.toLocaleString("en-US" , {style :
+            "currency" , currency : "USD" , minimumFractionDigits : 0}) %> for 1
+            night
           </p>
           <p><b>Visitor:</b> <%= booking.fullName %></p>
           <p><b>Check-in:</b> <%= booking.checkIn %></p>
