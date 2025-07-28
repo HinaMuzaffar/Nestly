@@ -1,6 +1,6 @@
 # Nestly
 
-## Description
+<b> Description </b>
 A full-stack web application that allows users to list, discover, and book rental properties. The key features of Nestly including listing creation, map-based search, user authentication, booking system, and responsive design. Built using MongoDB Atlas, Node.js, Express, and deployed on Render.
 
 ## 🔗 Live Project
@@ -45,7 +45,7 @@ SECRET =your_secret
 1. Clone the Repository
    ```
    git clone https://github.com/HinaMuzaffar/Nestly.git
-```
+   ```
 2. Install Dependencies
 ```
 npm install
@@ -54,6 +54,7 @@ npm install
 ```
 npm start
 ```
+
 App runs at: http://localhost:8080
 
 ## 📸 Screenshots
