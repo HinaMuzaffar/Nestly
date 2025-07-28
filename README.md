@@ -4,7 +4,7 @@
 A full-stack web application that allows users to list, discover, and book rental properties. The key features of Nestly including listing creation, map-based search, user authentication, booking system, and responsive design. Built using MongoDB Atlas, Node.js, Express, and deployed on Render.
 
 ## 🔗 Live Project
-<a href="https://nestly-zn8n.onrender.com/listings">Nestly</a>
+ Live Site : https://nestly-zn8n.onrender.com/listings
 
 ## 📌 Features
 - 🔐 User Authentication (Sign up / Login)
@@ -58,3 +58,11 @@ App runs at: http://localhost:8080
 
 ## 📸 Screenshots
 
+
+
+## 🙋‍♀️ Author
+Made with ❤️ by Hina Muzaffar
+📫 Email: [hinamuzaffar07@email.com]
+
+## 📄 License
+This project is licensed under the <a href=""><b>MIT License</b></a>.
