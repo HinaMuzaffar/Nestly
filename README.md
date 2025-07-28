@@ -15,19 +15,19 @@ A full-stack web application that allows users to list, discover, and book renta
 - 🌐 Responsive and modern UI/UX using Bootstrap
 
 ## 🛠️ Tech Stack
-# 🌐 Frontend
+<b> 🌐 Frontend </b>
 - HTML5, CSS3
 - JavaScript 
 - Bootstrap
   
-# 🔧 Backend
+<b> 🔧 Backend </b>
 - Node.js
 - Express.js
 - MongoDB Atlas
 - EJS
 - JWT Authentication
 
-# ☁️ Tools & APIs
+<b> ☁️ Tools & APIs </b>
 - Cloudinary 
 - Mapbox / Google Maps API
 
@@ -41,4 +41,20 @@ MAP_TOKEN= =your_mapbox_key
 ATLASDB_URL = your_mongodb_atlas_connection_string
 SECRET =your_secret
 ```
+## 💻 Getting Started Locally
+1. Clone the Repository
+   ```
+   git clone https://github.com/HinaMuzaffar/Nestly.git
+```
+2. Install Dependencies
+```
+npm install
+```
+3. Run the App
+```
+npm start
+```
+App runs at: http://localhost:8080
+
+## 📸 Screenshots
 
