@@ -1,6 +1,6 @@
 # Nestly
 
-<b> Description </b> <br>
+<b> Description </b> <br> <br>
 A full-stack web application that allows users to list, discover, and book rental properties. The key features of Nestly including listing creation, map-based search, user authentication, booking system, and responsive design. Built using MongoDB Atlas, Node.js, Express, and deployed on Render.
 
 ## 🔗 Live Project
@@ -33,14 +33,14 @@ A full-stack web application that allows users to list, discover, and book renta
 
 ## ⚙️ Environment Setup
 Create a .env file in the root of your project and add:
-```
-CLOUD_NAME= your_cloudinary_name
-CLOUD_API_KEY= your_api_key
-CLOUD_API_SECRET= your_api_secret
-MAP_TOKEN= =your_mapbox_key
-ATLASDB_URL = your_mongodb_atlas_connection_string
-SECRET =your_secret
-```
+   ```
+   CLOUD_NAME= your_cloudinary_name
+   CLOUD_API_KEY= your_api_key
+   CLOUD_API_SECRET= your_api_secret
+   MAP_TOKEN= =your_mapbox_key
+   ATLASDB_URL = your_mongodb_atlas_connection_string
+   SECRET =your_secret
+   ```
 ## 💻 Getting Started Locally
 1. Clone the Repository
    ```
@@ -61,8 +61,8 @@ App runs at: http://localhost:8080
 
 
 ## 🙋‍♀️ Author
-Made with ❤️ by Hina Muzaffar
+Made with ❤️ by Hina Muzaffar <br>
 📫 Email: [hinamuzaffar07@email.com]
 
 ## 📄 License
-This project is licensed under the <a href=""><b>MIT License</b></a>.
+This project is licensed under the [MIT License](./LICENSE).
