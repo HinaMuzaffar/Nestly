@@ -56,10 +56,6 @@ Create a .env file in the root of your project and add:
    ```
 App runs at: http://localhost:8080
 
-## 📸 Screenshots
-
-
-
 ## 🙋‍♀️ Author
 Made with ❤️ by Hina Muzaffar <br>
 📫 Email: [hinamuzaffar07@email.com]
