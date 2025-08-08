@@ -1,6 +1,6 @@
 # Nestly
 
-<b> Description </b> <br> <br>
+<b> Description </b> <br>
 A full-stack web application that allows users to list, discover, and book rental properties. The key features of Nestly including listing creation, map-based search, user authentication, booking system, and responsive design. Built using MongoDB Atlas, Node.js, Express, and deployed on Render.
 
 ## 🔗 Live Project
