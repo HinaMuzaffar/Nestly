@@ -109,16 +109,36 @@ module.exports.renderEditForm = async (req, res) => {
 
   let originalImageUrl =
     listing.images.length > 0 ? listing.images[0].url : null;
+  let originalImageFileName =
+    listing.images.length > 0 ? listing.images[0].filename : null;
   if (originalImageUrl) {
     originalImageUrl = originalImageUrl.replace("/upload", "/upload/w_250");
   }
-  res.render("listings/edit.ejs", { listing, originalImageUrl, categories });
+  res.render("listings/edit.ejs", {
+    listing,
+    originalImageUrl,
+    categories,
+    originalImageFileName,
+  });
 };
 
 /* Controller: Update Listing */
 module.exports.updateListing = async (req, res) => {
   const id = req.params.id.trim();
   let listing = await Listing.findByIdAndUpdate(id, { ...req.body.listing });
+
+  if (req.body.deleteImages) {
+    for (let filename of req.body.deleteImages) {
+      // 1. Delete image from Cloudinary
+      await cloudinary.uploader.destroy(filename);
+
+      // 2. Remove image from MongoDB (Atlas)
+      listing.images = listing.images.filter(
+        (img) => img.filename !== filename
+      );
+    }
+    await listing.save();
+  }
 
   if (req.files && req.files.length > 0) {
     const imgs = req.files.map((file) => ({

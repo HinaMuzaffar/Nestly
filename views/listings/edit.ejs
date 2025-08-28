@@ -32,15 +32,26 @@
           class="form-control"
           required
         >
- <%= listing.description %> </textarea
-        >
+ <%= listing.description %> </textarea >
+
         <div class="invalid-feedback">Description is not valid!</div>
       </div>
 
       <div class="mb-3">
-        Original Listing Image <br />
-        <img class="image-style" src="<%= originalImageUrl %>" />
-      </div>
+       <label><b>Original Listing Image</b></label> <br />
+        <% if (listing.images && listing.images.length > 0) { %>
+          <% listing.images.forEach((img, index) => { %>
+             <div class="mb-2">
+              <img class="image-style" src="<%= originalImageUrl %>" />
+                <label class="form-check-label ms-2">
+                  <input class="form-check-input" type="checkbox" name="deleteImages[]" value="<%= originalImageFileName %>" /> Delete
+                </label>
+              </div>
+               <% }) %>
+               <% } else { %>
+                  <p>No images found.</p>
+                  <% } %>
+              </div>
       <div class="mb-3">
         <label for="images" class="form-label"><b>Upload New Images</b></label>
         <input name="listing[images]" type="file" class="form-control" multiple
