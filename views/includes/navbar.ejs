@@ -1,4 +1,4 @@
-<nav class="navbar navbar-expand-md bg-body-light border-bottom sticky-top">
+<nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
   <div class="container-fluid">
     <a class="navbar-brand" href="/listings"
       ><i class="fa-regular fa-compass"></i
@@ -8,6 +8,9 @@
       type="button"
       data-bs-toggle="collapse"
       data-bs-target="#navbarNavAltMarkup"
+      aria-controls="navbarNavAltMarkup"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
     >
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -17,7 +20,7 @@
       </div>
 
       <!-- Search Bar -->
-      <div class="navbar-nav ms-auto">
+      <div class="navbar-nav ms-auto d-none d-md-block">
         <form
           class="d-flex"
           role="search"
@@ -52,7 +55,6 @@
 
             <div class="search-item" id="checkOut-date">
               <label class="search-text" for="checkOut"><b>Check out</b></label>
-
               <input
                 name="checkout"
                 id="checkOut"
@@ -62,13 +64,21 @@
                 required
               />
             </div>
-            <button class="btn search-btn search-btn" type="submit">
+            <button class="btn search-btn" type="submit">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </div>
         </form>
       </div>
 
+      <!-- Mobile Search Button  -->
+      <div class="navbar-nav ms-auto d-block d-md-none">
+        <a href="/listings/search" class="btn btn-outline-secondary">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </a>
+      </div>
+
+      <!-- Auth Links -->
       <div class="navbar-nav ms-auto">
         <a class="nav-link" href="/listings/new">Nestly your home</a>
         <% if(!currUser) { %>
