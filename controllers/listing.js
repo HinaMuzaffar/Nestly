@@ -129,7 +129,6 @@ module.exports.updateListing = async (req, res) => {
 
   if (req.body.deleteImages) {
     for (let filename of req.body.deleteImages) {
-      // 2. Remove image from MongoDB (Atlas)
       listing.images = listing.images.filter(
         (img) => img.filename !== filename
       );
