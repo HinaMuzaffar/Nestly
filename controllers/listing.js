@@ -129,9 +129,6 @@ module.exports.updateListing = async (req, res) => {
 
   if (req.body.deleteImages) {
     for (let filename of req.body.deleteImages) {
-      // 1. Delete image from Cloudinary
-      await cloudinary.uploader.destroy(filename);
-
       // 2. Remove image from MongoDB (Atlas)
       listing.images = listing.images.filter(
         (img) => img.filename !== filename
