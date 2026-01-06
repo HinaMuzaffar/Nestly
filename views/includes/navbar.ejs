@@ -3,6 +3,8 @@
     <a class="navbar-brand" href="/listings"
       ><i class="fa-regular fa-compass"></i
     ></a>
+
+
     <button
       class="navbar-toggler"
       type="button"
@@ -11,15 +13,18 @@
     >
       <span class="navbar-toggler-icon"></span>
     </button>
+
+     <!-- Collapsible content -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+      <!-- Left Part -->
       <div class="navbar-nav">
         <a class="nav-link" href="/listings">Explore</a>
       </div>
 
       <!-- Search Bar -->
-      <div class="navbar-nav ms-auto">
+      <div class="navbar-nav ms-auto flex-grow-1 justify-content-center">
         <form
-          class="d-flex"
+          class="d-flex w-100 justify-content-center"
           role="search"
           id="searchbar"
           method="POST"
@@ -61,7 +66,7 @@
                 required
               />
             </div>
-            <button class="btn search-btn" type="submit">
+            <button class="btn search-btn mt-2" type="submit">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </div>
@@ -70,12 +75,12 @@
 
       <!-- Auth Links -->
       <div class="navbar-nav ms-auto">
-        <a class="nav-link" href="/listings/new">Nestly your home</a>
+        <a class="nav-item nav-link" href="/listings/new">Nestly your home</a>
         <% if(!currUser) { %>
-        <a class="nav-link active" href="/signup"><b>Sign up</b></a>
-        <a class="nav-link" href="/login"><b>Log in</b></a>
+        <a class="nav-item nav-link active" href="/signup"><b>Sign up</b></a>
+        <a class="nav-item nav-link" href="/login"><b>Log in</b></a>
         <% } else { %>
-        <a class="nav-link" href="/logout"><b>Log out</b></a>
+        <a class=" nav-item nav-link" href="/logout"><b>Log out</b></a>
         <% } %>
       </div>
     </div>

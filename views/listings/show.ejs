@@ -5,11 +5,12 @@
 </script>
 <!-- Listing Title -->
 <div class="row mt-3">
-    <div class="col-8 offset-3">
+    <div class="col-5 offset-3">
     <h3><%= listing.title %> </h3>
 </div>
 <!-- Listing Card -->
-    <div class="card col-6 offset-3 show-card listing-card">
+ <div class="row">
+    <div class="card col-5 offset-3 show-card listing-card">
         <div class="image-gallery-container">  <% listing.images.forEach(img => { %>
             <div class="image-wrapper">
              <img src="<%= img.url  %>" class="card-img-top show-img" alt="listing_image">
@@ -27,6 +28,7 @@
             <p class="card-text"> <b>Cancellation Policy</b> <br>  <%= listing.cancellationPolicy %>   </p>
         </div>
     </div>
+</div>
 </div>
 <br>
 <!-- Delete section for Owner -->
@@ -46,12 +48,13 @@
 </div>
 
 <!-- Review Section -->
-   <div class="col-8 offset-3 mb-3">
+ <div class="row mt-4 ">
+   <div class="col-md-8 offset-md-3">
     <% if(currUser && !listing.owner._id.equals(currUser._id)) { %>
         <hr>
     <h4>Leave a Review</h4>
     <form action="/listings/ <%= listing.id %>/reviews" method="POST" novalidate class="needs-validation">
-        <div class="mb-3 mt-3">
+        <div class="mb-3">
             <label for="rating" class="form-label">Rating</label>
         <fieldset class="starability-slot">
             <input type="radio" id="no-rate" class="input-no-rate" name="reveiw[rating]" value="1" checked aria-label="No rating." />
@@ -67,26 +70,29 @@
             <label for="first-rate5" title="Amazing">5 stars</label>
           </fieldset>
           </div>
-        <div class="mb-3 mt-3">
+        <div class="mb-3">
             <label for="comment" class="form-label">Comments</label>
-            <textarea rows="5" cols="30" id="comment" name="review[comment]" class="form-control" required></textarea>
+            <textarea rows="5" id="comment" name="review[comment]" class="form-control" required></textarea>
             <div class="invalid-feedback">Please add some comments for reveiw.</div>
         </div>
         <button class="btn btn-outline-dark">Submit</button>
     </form>
+    </div>
+    </div>
     <hr>
     <% } %>
 
     <!-- Display Reviews -->
     <%  if(listing.reviews.length > 0) {%>
-    <div class="row">
+    <div class="row mt-2">
+          <div class="col-md-6 offset-md-3">
         <p><b>All Reviews</b></p>
      <% for(review of listing.reviews) { %>
-        <div class="card col-5 mb-3 ms-3">
-            <div class="card-body">
+        <div class="card mb-4 pb-3 border-bottom">
+            <div class="card-body d-flex align-items-center justify-content-between mb-1">
                 <h5 class="card-title"> @<%= review.author.username %></h5>
                 <p class="starability-result card-text" data-rating="<%= review.rating %>"></p>
-                <p class="card-text"> <%= review.comment %></p>
+                <p class="card-text mb-2"> <%= review.comment %></p>
                 <% if(currUser._id.equals(review.author._id)) { %>
             <form class="mb-3" method="POST" action="/listings/<%= listing._id %>/reviews/<%= review._id %>?_method=DELETE">
                 <button class="btn btn-sm btn-dark">Delete</button>
@@ -94,13 +100,16 @@
             </form>
         </div>
         </div>
+        </div>
    <% } %>
     </div>
     <% } %>
 </div>
 
+
 <!-- Map Section -->
-    <div class="col-8 offset-3 mb-3">
+ <div class="row">
+    <div class="col-5 offset-3 mb-3 map-responsive">
         <h3>Where you'll be</h3>
         <div id="map"></div>
         </div>
