@@ -34,7 +34,7 @@ module.exports.createBooking = async (req, res) => {
   const available = await isDateAvailable(
     id,
     new Date(checkIn),
-    new Date(checkOut)
+    new Date(checkOut),
   );
 
   if (!available) {
@@ -56,13 +56,17 @@ module.exports.createBooking = async (req, res) => {
   });
   await booking.save();
   req.flash("success", "Booking Created Successfully!");
-  res.redirect("/bookings", { days, totalPrice });
+  req.flash(
+    "success",
+    `Booking created for ${days} days. Total: ${totalPrice}`,
+  );
+  res.redirect("/bookings");
 };
 
 //Show Bookings
 module.exports.showBookings = async (req, res) => {
   const bookings = await Booking.find({ user: req.user._id }).populate(
-    "listing"
+    "listing",
   );
   res.render("bookings/index", { bookings });
 };
