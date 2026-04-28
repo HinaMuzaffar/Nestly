@@ -125,3 +125,44 @@
     width: 100%;
   }
 }
+
+/* CENTER SEARCHBAR */
+.search-wrapper {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+/* MOBILE FIX */
+@media (max-width: 768px) {
+  .search-wrapper {
+    width: 100%;
+    order: 3;
+    margin-top: 10px;
+  }
+
+  .navbar-collapse {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .searchbar {
+    width: 100%;
+    flex-direction: column;
+    border-radius: 20px;
+    padding: 10px;
+  }
+
+  .search-item {
+    border-right: none !important;
+    border-bottom: 1px solid #eee;
+  }
+
+  .search-item:last-child {
+    border-bottom: none;
+  }
+
+  .search-btn {
+    align-self: flex-end;
+  }
+}
