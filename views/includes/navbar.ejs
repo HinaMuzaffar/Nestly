@@ -1,86 +1,53 @@
 <nav class="navbar navbar-expand-md navbar-light bg-light border-bottom sticky-top">
   <div class="container-fluid">
-    <a class="navbar-brand" href="/listings"
-      ><i class="fa-regular fa-compass"></i
-    ></a>
+    <a class="navbar-brand" href="/listings"><i class="fa-regular fa-compass"></i></a>
 
-
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarNavAltMarkup"
-    >
+    <!-- Hamburger -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup">
       <span class="navbar-toggler-icon"></span>
     </button>
 
-     <!-- Collapsible content -->
+    <!-- Collapsible content -->
     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <!-- Left Part -->
+      <!-- Left -->
       <div class="navbar-nav">
         <a class="nav-link" href="/listings">Explore</a>
       </div>
 
-      <!-- Search Bar -->
-      <div class="search-wrapper mx-auto">
-        <form
-          class="d-flex w-100 justify-content-center"
-          role="search"
-          id="searchbar"
-          method="POST"
-          action="/listings/search"
-          enctype="multipart/form-data"
-        >
-          <div class="searchbar">
-            <div class="search-item" id="location-box">
-              <label class="search-text" for="search-input"><b>Where</b></label>
-              <input
-                name="searchDestinations"
-                id="search-input"
-                class="form-control me-2 search-inp date-input"
-                type="search"
-                placeholder="Search destinations"
-              />
+      <!-- Center Search -->
+      <div class="navbar-nav mx-auto flex-grow-1 justify-content-center">
+        <form action="/listings/search" method="GET" class="d-flex w-100 justify-content-center">
+          <div class="search-bar-set">
+            <div class="search-section">
+              <label for="destination">Where</label>
+              <input type="text" id="destination" name="destination" placeholder="Search destinations">
+            </div>
+            <div class="search-section">
+              <label for="checkin">Check in</label>
+              <input type="text" id="checkIn" name="checkin" placeholder="Add dates">
+            </div>
+            <div class="search-section">
+              <label for="checkout">Check out</label>
+              <input type="text" id="checkOut" name="checkout" placeholder="Add dates">
             </div>
 
-            <div class="search-item" id="checkIn-date">
-              <label class="search-text" for="checkIn"><b>Check in</b></label>
-              <input
-                name="checkIn"
-                id="checkIn"
-                class="form-control me-2 search-inp date-input"
-                type="text"
-                placeholder="Add dates"
-                required
-              />
-            </div>
-
-            <div class="search-item" id="checkOut-date">
-              <label class="search-text" for="checkOut"><b>Check out</b></label>
-              <input
-                name="checkout"
-                id="checkOut"
-                class="form-control me-2 search-inp date-input"
-                type="text"
-                placeholder="Add dates"
-                required
-              />
-            </div>
-            <button class="btn search-btn mt-2" type="submit">
+            <button class="btn search-btn-set mt-2" type="submit">
               <i class="fa-solid fa-magnifying-glass"></i>
             </button>
           </div>
         </form>
       </div>
 
-      <!-- Auth Links -->
+      <!-- Right Auth -->
       <div class="navbar-nav ms-auto">
-        <a class="nav-item nav-link" href="/listings/new">Nestly your home</a>
+        <a class="nav-item nav-link" href="/listings/new">Become a Host</a>
         <% if(!currUser) { %>
-        <a class="nav-item nav-link active" href="/signup"><b>Sign up</b></a>
-        <a class="nav-item nav-link" href="/login"><b>Log in</b></a>
-        <% } else { %>
-        <a class=" nav-item nav-link" href="/logout"><b>Log out</b></a>
+          <a class="nav-item nav-link" href="/signup"><b>Sign up</b></a>
+          <a class="nav-item nav-link" href="/login"><b>Log in</b></a>
+        <% } %>
+        <% if(currUser) { %>
+          <a class="nav-item nav-link" href="/bookings">My Bookings</a>
+          <a class="nav-item nav-link" href="/logout"><b>Logout</b></a>
         <% } %>
       </div>
     </div>
