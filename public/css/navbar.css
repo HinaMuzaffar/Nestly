@@ -148,7 +148,7 @@
 
   .searchbar {
     width: 100%;
-    flex-direction: column;
+    flex-direction: row;
     border-radius: 20px;
     padding: 10px;
   }
@@ -164,5 +164,16 @@
 
   .search-btn {
     align-self: flex-end;
+  }
+}
+
+@media (max-width: 768px) {
+  .search-item {
+    min-width: 120px; /* keeps items small */
+    border-bottom: none !important;
+  }
+
+  .search-btn {
+    margin: 0 8px;
   }
 }
