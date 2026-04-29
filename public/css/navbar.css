@@ -1,4 +1,4 @@
-/* --- Navbar Polished --- */
+/* --- Navbar --- */
 .navbar {
   height: auto; /* Let content decide */
   background-color: #fff;
@@ -15,7 +15,7 @@
   margin-top: 0.2rem;
 }
 
-/* --- Search Bar Improvements --- */
+/* --- Main SearchBar Styling --- */
 .search-bar-set {
   display: flex;
   align-items: center;
@@ -70,6 +70,7 @@
   border: none;
 }
 
+/* Search Button */
 .search-btn-set {
   background-color: #fe424d;
   color: white;
@@ -95,13 +96,13 @@
   font-size: 0.95rem;
 }
 
+/* Responsive */
 @media (max-width: 992px) {
   .search-section input {
     width: 100%; /* full width on tablet/mobile */
   }
 }
 
-/* --- Responsive --- */
 @media (max-width: 992px) {
   .search-bar-set {
     flex-wrap: wrap;
