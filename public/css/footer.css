@@ -29,4 +29,5 @@
   justify-content: center;
   flex-wrap: wrap;
   align-items: space-evenly;
+  width: 100%;
 }
