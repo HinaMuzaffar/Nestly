@@ -58,6 +58,8 @@ body {
 .edit-btn {
   background-color: #fe424d !important;
   border: none !important;
+  display: inline-block;
+  width: auto;
 }
 
 .image-style {
