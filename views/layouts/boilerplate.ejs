@@ -56,11 +56,11 @@
     <script src="https://api.mapbox.com/mapbox-gl-js/v3.11.0/mapbox-gl.js"></script>
   </head>
 
-  <body>
+  <body class="d-flex flex-column min-vh-100">
     <!-- Navbar Include -->
     <%- include("../includes/navbar.ejs") %>
 
-    <div class="container mt-3 content-wrapper">
+    <div class="container mt-3 flex-grow-1 content-wrapper">
       <!-- Flash messages -->
       <%- include("../includes/flash.ejs") %> <%- body %>
     </div>
